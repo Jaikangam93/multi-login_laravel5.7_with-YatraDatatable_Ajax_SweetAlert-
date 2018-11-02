@@ -15,6 +15,11 @@
     <link href="{{ asset('assets/css/components.css')}}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/colors.css')}}" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
+
+     <!-- New Added  out of the Theme -->
+     <link href="{{ asset('ajax/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
+     <!-- close New Added  out of the Theme -->
+ 
   
     <!-- Core JS files -->
     <script type="text/javascript" src="{{ asset('assets/js/plugins/loaders/pace.min.js')}}"></script>
@@ -35,3 +40,15 @@
     <script type="text/javascript" src="{{ asset('assets/js/core/app.js')}}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/pages/dashboard.js')}}"></script>
     <!-- /theme JS files -->
+
+
+    <!--  Select Plugin  --> 
+    <script type="text/javascript" src="{{ asset('assets/js/plugins/forms/selects/select2.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/core/libraries/jquery_ui/interactions.min.js')}}"></script>
+    <!--  Close for Select Plugin  --> 
+
+
+    <!--  Core below --> 
+    <script type="text/javascript" src=" {{ asset('assets/js/pages/picker_date.js')}} "></script>
+    <script type="text/javascript" src="  {{ asset('assets/js/pages/form_select2.js')}}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/plugins/ui/ripple.min.js')}} "></script>

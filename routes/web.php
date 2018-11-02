@@ -27,4 +27,14 @@ Route::group(array('middleware' => 'auth'), function()
 	Route::get('teacher/dashboard','DashboardController@show_teacherdashboard')->name('teacherdashboard');
 	Route::get('student/dashboard','DashboardController@show_studentdashboard')->name('studentdashboard');
 
+	
+
+
+
+	//System User Route 
+	Route::resource('admin/systemusers', 'SystemAdminController');
+
+	Route::get('admin/api/managesystemusers', 'SystemAdminController@apimanagesystemusers')->name('api.managesystemusers');
+
+	
 });

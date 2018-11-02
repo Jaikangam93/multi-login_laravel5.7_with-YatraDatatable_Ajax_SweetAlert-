@@ -146,11 +146,14 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+       
 
         /*
          * Package Service Providers...
          */
-
+        // Package Yajra Datatable 
+         yajra\Datatables\DatatablesServiceProvider::class,
+       
         /*
          * Application Service Providers...
          */
@@ -208,7 +211,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Datatables' => yajra\Datatables\Datatables::class,
+        //Extra Package Added bellow 
+      
     ],
 
 ];

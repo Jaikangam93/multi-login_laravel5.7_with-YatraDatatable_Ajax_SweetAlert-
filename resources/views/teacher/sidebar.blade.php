@@ -6,7 +6,7 @@
                     <div class="sidebar-user">
                         <div class="category-content">
                             <div class="media">
-                                <a href="#" class="media-left"><img src="assets/images/placeholder.jpg" class="img-rounded  img-sm" alt=""></a>
+                                <a href="#" class="media-left"><img src="{{asset('assets/images/placeholder.jpg')}}" class="img-rounded  img-sm" alt=""></a>
                                 <div class="media-body">
                                     <span class="media-heading text-semibold">Victoria Baker</span>
                                     <div class="text-size-mini text-muted">
