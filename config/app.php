@@ -151,8 +151,7 @@ return [
         /*
          * Package Service Providers...
          */
-        // Package Yajra Datatable 
-         yajra\Datatables\DatatablesServiceProvider::class,
+       
        
         /*
          * Application Service Providers...
@@ -162,6 +161,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+
+        // Custome Install Package 
+        yajra\Datatables\DatatablesServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
     ],
 
@@ -211,9 +215,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Datatables' => yajra\Datatables\Datatables::class,
+        
         //Extra Package Added bellow 
-      
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Datatables' => yajra\Datatables\Datatables::class,
     ],
 
 ];
