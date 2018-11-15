@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('admin.sidebar')
+@include('systemadmin.sidebar')
 <!-- Main content --> 
 <div class="content-wrapper">
 
@@ -85,7 +85,7 @@
       </div>
       <!-- /column controlled child rows -->
 
-      @include('admin.systemusers_modal')
+      @include('systemadmin.systemusers_modal')
       @include('partials.footer')
   </div>
   <!-- /content area -->
@@ -116,14 +116,131 @@
 
 
   <script type="text/javascript">
+        
+
         function addForm() {
           save_method = "add";
           $('input[name=_method]').val('POST');
           $('#modal-form').modal('show');
           $('#modal-form form')[0].reset();
-          $('.modal-title').text('Add New System User ');
+          $('.modal-title').text(' Add New User ');
+
         }
+
+        //Function to ADD Registration 
+      $(function(){
+        $('#modal-form form').on('submit', function (e) {
+          if (!e.isDefaultPrevented())
+          {
+            var id = $('#id').val();
+            if (save_method == 'add') url = "{{ url('systemadmin/systemusers') }}"; 
+            //else  url = "{{ url('systemadmin/listsystemusers') . '/' }}" + id;
+            $.ajax({
+              url : url,
+              type : "POST",
+                       // data : $('#modal-form form').serialize(),
+                       data: new FormData($("#modal-form form")[0]),
+                       contentType: false,
+                       processData: false,
+                       success : function(data) {
+                        $('#modal-form').modal('hide');
+                        table.ajax.reload();
+                        swal({
+                          title: 'Success!',
+                          text: data.message,
+                          type: 'success',
+                        })
+                      },
+                      error : function(data){
+                        swal({
+                          title: 'Oops...',
+                          text: data.message,
+                          type: 'error', 
+                        })
+                      }
+                    });
+            return false;
+          }
+
+        });
+      });
+      
+     
+
+        
+
+        //Function for Delete user 
+        function deleteData(id){
+          var csrf_token = $('meta[name="csrf-token"]').attr('content');
+          swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+          }).then(function () {
+            $.ajax({
+              url : "{{ url('systemadmin/systemusers') }}" + '/' + id,
+              type : "POST",
+              data : {'_method' : 'DELETE', '_token' : csrf_token},
+              success : function(data) {
+                table.ajax.reload();
+                swal({
+                  title: 'Success!',
+                  text: data.message,
+                  type: 'success',   
+                })
+              },
+              error : function () {
+                swal({
+                  title: 'Oops...',
+                  text: data.message,
+                  type: 'error',
+
+                })
+              }
+            });
+          });
+        } //Function for Delete user 
+
+        // Function for user change Status 
+        function userchangestatus(id){
+          var csrf_token = $('meta[name="csrf-token"]').attr('content');
+          swal({
+            title: 'Are you sure want to change Status?',
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, Change it!'
+          }).then(function () {
+            $.ajax({
+              url : "{{ url('/systemadmin/userchangestatus') }}" + '/' + id,
+              type : "POST",
+              data : {'_method' : 'POST', '_token' : csrf_token},
+              success : function(data) {
+                table.ajax.reload();
+                swal({
+                  title: 'Success!',
+                  text: data.message,
+                  type: 'success',  
+                })
+              },
+              error : function () {
+                swal({
+                  title: 'Oops...',
+                  text: data.message,
+                  type: 'error',
+                })
+              }
+            });
+          });
+        }  // close for user change Status 
+
   </script>
+
 
   
 </div>

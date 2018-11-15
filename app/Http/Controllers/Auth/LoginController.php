@@ -32,7 +32,7 @@ class LoginController extends Controller
 
         $role = \Auth::user()->role;
         
-        if ($role == 'ADM') {         
+        if ($role == 'SYA') {         
 
             return('admin/dashboard');
 

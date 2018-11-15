@@ -2,7 +2,7 @@
 
 @section('content')
 
-@include('admin.sidebar')
+@include('systemadmin.sidebar')
 
 
             <!-- Main content -->

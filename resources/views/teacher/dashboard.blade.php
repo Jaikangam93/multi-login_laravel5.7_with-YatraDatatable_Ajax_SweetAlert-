@@ -4,7 +4,6 @@
 
 @include('teacher.sidebar')
 
-
             <!-- Main content -->
             <div class="content-wrapper">
 
@@ -56,9 +55,6 @@
                 <!-- Content area -->
                 <div class="content">
   
-
-
-
                     @include('partials.footer')
 
                 </div>

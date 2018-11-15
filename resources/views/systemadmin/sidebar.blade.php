@@ -34,9 +34,9 @@
 
                                 <!-- Main -->
                                 <li class="navigation-header"><span>Main</span> <i class="icon-menu" title="Main pages"></i></li>
-                                <li class="active"><a href="{{url('admin/dashboard')}}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
+                                <li class="active"><a href="{{url('systemadmin/dashboard')}}"><i class="icon-home4"></i> <span>Dashboard</span></a></li>
                                 <li>
-                                    <a href="{{url('admin/systemusers')}}"><i class="icon-stack2"></i> <span>System Users</span></a>
+                                    <a href="{{url('systemadmin/systemusers')}}"><i class="icon-stack2"></i> <span>System Users</span></a>
                                     
                                 </li>
                                 

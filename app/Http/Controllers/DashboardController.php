@@ -9,7 +9,7 @@ class DashboardController extends Controller
     //1  Admin 
     public function show_admindashboard()
     {
-    	return view('admin.dashboard');    	
+    	return view('systemadmin.dashboard');    	
     }
 
     //2 Teacher
