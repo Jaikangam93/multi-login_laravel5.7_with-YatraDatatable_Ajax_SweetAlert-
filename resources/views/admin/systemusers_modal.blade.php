@@ -32,7 +32,7 @@
                         <div class="form-group">
                           <label>Role<span class="text-danger"> *</span></label>   
                           <div class="form-group has-feedback has-feedback-left">
-                            <select data-plugin="selectpicker" class="select" name="role" id="idrole" data-placeholder="---Select Role---">
+                            <select data-plugin="selectpicker" class="select form-control" name="role" id="idrole" data-placeholder="---Select Role---">
                               <option></option> 
                               <option value="SYA">System Admin</option>
                               <option value="MGM">Management</option>
@@ -86,7 +86,7 @@
                       <div class="form-group">
                        <label>Location<span class="text-danger"> *</span></label>     
                        <div class="form-group has-feedback has-feedback-left">
-                        <select data-plugin="selectpicker" class="select" id="idlocation" name="location" data-placeholder="---Select Location---">
+                        <select data-plugin="selectpicker" class="select form-control" id="idlocation" name="location" data-placeholder="---Select Location---">
                           <option></option> 
                           <option value="Dimapur">Dimapur</option>
                           <option value="Kohima">Kohima</option>
